@@ -1,0 +1,46 @@
+<mat-menu class="menu" #menu="matMenu" [overlapTrigger]="false">
+  <h1 class="dropdownheading">Notifications
+    <span *ngIf="notificationsCount>0" class="badge">{{notificationsCount}}</span>
+  </h1>
+  <mat-tab-group (click)="stopClickPropagate($event)" (selectedTabChange)="onSelectedTabChange($event)">
+    <mat-tab label="Current">
+      <div class="tab-content">
+        <app-notifications [notifications]="noticesByStudy['Current']"></app-notifications>
+      </div>
+    </mat-tab>
+    <mat-tab label="Others">
+      <div class="tab-content">
+        <app-notifications [notifications]="noticesByStudy['Others']"></app-notifications>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+  <div fxLayout="row" fxLayoutAlign="start start">
+    <div>
+      <button (click)="previousNotices($event)" mat-mini-fab [disabled]="(noticeOffsets[currentTab] === 0)">
+        <mat-icon>chevron_left</mat-icon>
+      </button>
+    </div>
+    <div>
+      <button (click)="markAllAsRead($event)" mat-raised-button *ngIf="notificationsCount>0">
+        Mark All As Read
+      </button>
+    </div>
+    <div>
+      <button (click)="nextNotices($event)" mat-mini-fab [disabled]="(noticesByStudy[currentTab].length === 0)">
+        <mat-icon>chevron_right</mat-icon>
+      </button>
+    </div>
+
+
+
+  </div>
+</mat-menu>
+
+<mat-toolbar class="toolbarcolor">
+  <span class="example-spacer"></span>
+  <span *ngIf="notificationsCount>0" class="red_badge"></span>
+  <span class="badge_button">{{notificationsCount>0?notificationsCount:''}}</span>
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>notifications_none</mat-icon>
+  </button>
+</mat-toolbar>

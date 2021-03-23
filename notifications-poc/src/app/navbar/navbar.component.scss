@@ -1,0 +1,94 @@
+.example-icon {
+    padding: 0 14px;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.position {
+    float: right;
+}
+
+.toolbarcolor {
+    background: #edf4fc;
+}
+
+.dropdownheading {
+    color: #619ee6;
+    font: 500 20px/32px Roboto, "Helvetica Neue", sans-serif;
+}
+
+::ng-deep .menu {
+    max-width: none !important;
+    min-height: 450px !important;
+    width: 320px !important;
+    margin-left: -8px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 50px;
+}
+
+.mat_tab {
+    transform: none !important;
+}
+
+::ng-deep .tab_bg {
+    background: #1F89CE !important;
+}
+
+.badge {
+    background: #1F89CE;
+    padding: 3px 5px;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 15px;
+}
+
+.badge_button {
+    position: absolute;
+    right: 0px;
+    top: 20px;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: .6em;
+    border-radius: 999px;
+    line-height: .75em;
+    color: #000000;
+    background: transparent;
+    text-align: center;
+    min-width: 2em;
+    margin-right: 9px;
+}
+
+.move_button_center {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.move_button_center button {
+    background-color: #dde4ed;
+    border: 0px;
+    border-bottom: 1px solid #727f8f !important;
+    padding: 5px 8px;
+    color: #727f8f;
+    border-radius: 3px;
+}
+
+.red_badge {
+    position: absolute;
+    right: 32px;
+    top: 44px;
+    padding: 3px;
+    z-index: 1;
+    border: 2px solid white;
+    border-radius: 50%;
+    background: red;
+}
+
+.pagination-button{
+    background: none;
+    text-align: center;
+    border: 2px solid #619ee6;
+    color: #619ee6;
+}

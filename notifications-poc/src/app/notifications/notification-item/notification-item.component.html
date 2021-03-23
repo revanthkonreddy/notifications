@@ -1,0 +1,17 @@
+<div class="notification-item" fxLayout="row" fxLayoutAlign="start start">
+  <div>
+    <img [src]="avatarsUrl(notice.user.profileImage)" class="avatar" [ngClass]="{admin: notice.user.isAdmin}" alt="{{notice.user.name}}"
+    />
+    <span *ngIf="!notice.isRead" class="unread"></span>
+  </div>
+
+  <div fxFlexAlign="center">
+    <div>
+      <span class="username">{{notice.user.name}}</span>
+      <span class="message"> {{notice.action}} on your {{notice.subject}} in {{notice.topic}}
+        <span matTooltip="notice.timestamp | date:'MMMM d, y h:mm a'" class="time">{{notice.timestamp | amTimeAgo}}</span>
+      </span>
+    </div>
+    <span *ngIf="notice.study != 'Current'" class="secondary-text">{{notice.study}}</span>
+  </div>
+</div>
